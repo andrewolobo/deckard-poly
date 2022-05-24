@@ -16,7 +16,7 @@ const optimiser = tf.train.adam(learningRate);
 var xs = [];
 var ys = [];
 var region = "US";
-var sku = "64GB";
+var sku = "256GB";
 var degree = 1
 
 var l_max = tf.tensor([1]);
@@ -116,7 +116,7 @@ async function learnCoefficients() {
 parseCSV(file().training).then((e) => {
     normalizeData();
     learnCoefficients().then((pred) => {
-        var p = tf.tensor1d([1626469138]);
+        var p = tf.tensor1d([1626464336]);
         const xs = p.sub(i_min).div(i_max.sub(i_min))
         predict(xs, degree).data().then((es) => {
             var pr = tf.tensor1d(es)
